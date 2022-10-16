@@ -18,6 +18,12 @@
                         Этажность склада
                     </p>
                 </a>
+                <a href="{{ route('admin.place.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-crosshairs"></i>
+                    <p>
+                        Место расположения
+                    </p>
+                </a>
             </li>
         </ul>
     </div>
