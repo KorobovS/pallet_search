@@ -21,6 +21,17 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('admin');
     });
+
+    Route::group(['namespace' => 'Article', 'prefix' => 'articles'], function () {
+        Route::get('/', 'IndexController')->name('admin.article.index');
+        Route::get('/create', 'CreateController')->name('admin.article.create');
+        Route::post('/', 'StoreController')->name('admin.article.store');
+        Route::get('/{article}', 'ShowController')->name('admin.article.show');
+        Route::get('/{article}/edit', 'EditController')->name('admin.article.edit');
+        Route::patch('/{article}', 'UpdateController')->name('admin.article.update');
+        Route::delete('/{article}', 'DeleteController')->name('admin.article.delete');
+    });
+
     Route::group(['namespace' => 'Floor', 'prefix' => 'floors'], function () {
         Route::get('/', 'IndexController')->name('admin.floor.index');
         Route::get('/create', 'CreateController')->name('admin.floor.create');
@@ -30,6 +41,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
         Route::patch('/{floor}', 'UpdateController')->name('admin.floor.update');
         Route::delete('/{floor}', 'DeleteController')->name('admin.floor.delete');
     });
+
     Route::group(['namespace' => 'Place', 'prefix' => 'places'], function () {
         Route::get('/', 'IndexController')->name('admin.place.index');
         Route::get('/create', 'CreateController')->name('admin.place.create');

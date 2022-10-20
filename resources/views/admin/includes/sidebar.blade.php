@@ -18,10 +18,20 @@
                         Этажность склада
                     </p>
                 </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('admin.place.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-crosshairs"></i>
                     <p>
                         Место расположения
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.article.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-newspaper"></i>
+                    <p>
+                        Артикул
                     </p>
                 </a>
             </li>
