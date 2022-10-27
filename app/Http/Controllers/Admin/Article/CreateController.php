@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Admin\Article;
 
-use App\Http\Controllers\Controller;
 use App\Models\Floor;
 use App\Models\Place;
 
-class CreateController extends Controller
+class CreateController extends BaseController
 {
     public function __invoke()
     {

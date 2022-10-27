@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin\Article;
 
-use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Floor;
 use App\Models\Place;
 
-class EditController extends Controller
+class EditController extends BaseController
 {
     public function __invoke(Article $article)
     {
