@@ -16,9 +16,9 @@ class StoreController extends Controller
             unset($data['place_ids']);
             $article = Article::firstOrCreate($data);
             $article->places()->attach($placeIds);
-            return redirect()->route('admin.article.index');
         } catch (\Exception $exception) {
             abort(404);
         }
+        return redirect()->route('admin.article.index');
     }
 }
