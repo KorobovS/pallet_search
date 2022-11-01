@@ -34,13 +34,13 @@
                             <div class="form-group  w-25">
                                 <input type="text" class="form-control" name="article" placeholder="Введите артикул" value="{{ $article->article }}">
                                 @error('article')
-                                <div class="text-danger">Необходимо указать артикул продукции.</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <textarea id="summernote" name="content">{{ $article->content }}</textarea>
                                 @error('content')
-                                <div class="text-danger">Необходимо указать сегодняшнюю дату.</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group w-25">
