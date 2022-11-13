@@ -9,12 +9,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Добавить продукцию</h1>
+                        <h1 class="m-0">Добавляем продукцию</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin') }}">Главная</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.article.index') }}">Продукция</a></li>
+                            <li class="breadcrumb-item active">Добавляем продукцию</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
