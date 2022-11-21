@@ -20,6 +20,14 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a href="{{ route('personal.like.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-heart"></i>
+                    <p>
+                        Понравившиеся посты
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{ route('personal.comment.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-comment"></i>
                     <p>

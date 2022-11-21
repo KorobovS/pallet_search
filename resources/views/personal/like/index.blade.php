@@ -9,11 +9,11 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Комментарии</h1>
+                        <h1 class="m-0">Понравившиеся посты</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item active">Комментарии</li>
+                            <li class="breadcrumb-item active">Понравившиеся посты</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -38,15 +38,15 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($comments as $comment)
+                                    @foreach($articles as $article)
                                         <tr>
-                                            <td>{{ $comment->id }}</td>
-                                            <td>{{ $comment->message }}</td>
+                                            <td>{{ $article->id }}</td>
+                                            <td>{{ $article->article }}</td>
                                             <td class="text-center"><a
-                                                    href="{{ route('personal.comment.edit', $comment->id) }}"
-                                                    class="text-success"><i class="fas fa-pen-alt"></i></a></td>
-                                            <td class="text-center">
-                                                <form action="{{ route('personal.comment.delete', $comment->id) }}"
+                                                    href="{{ route('admin.article.show', $article->id) }}"><i
+                                                        class="far fa-eye"></i></a></td>
+                                            <td  class="text-center">
+                                                <form action="{{ route('personal.like.delete', $article->id) }}"
                                                       method="POST">
                                                     @csrf
                                                     @method('DELETE')
@@ -63,6 +63,7 @@
                             <!-- /.card-body -->
                         </div>
                     </div>
+                    <!-- ./col -->
                 </div>
                 <!-- /.row -->
             </div><!-- /.container-fluid -->
