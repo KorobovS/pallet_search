@@ -17,4 +17,9 @@ class Article extends Model
     public function places() {
         return $this->belongsToMany(Place::class, 'article_places', 'article_id', 'place_id');
     }
+
+    public function floors() {
+        return $this->belongsTo(Floor::class, 'floor_id', 'id');
+    }
+
 }

@@ -14,7 +14,7 @@
 <header>
     <nav class="navbar navbar-expand-sm navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="{{ asset('assets/images/logo.svg') }}" alt="logo"></a>
+            <a class="navbar-brand" href="{{ route('main.index') }}"><img src="{{ asset('assets/images/logo.svg') }}" alt="logo"></a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
                     aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -22,13 +22,13 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Найти паллет</a>
+                        <a class="nav-link" href="{{ route('main.index') }}">Что стоит на складе</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Поставить паллет</a>
+                        <a class="nav-link" href="{{ route('admin') }}">Администратор</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Контакты</a>
+                        <a class="nav-link" href="{{ route('personal') }}">Кладовщик</a>
                     </li>
                 </ul>
             </div>
