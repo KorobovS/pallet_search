@@ -17,6 +17,14 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/', 'IndexController')->name('main.index');
 });
 
+//Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
+
+Route::group(['namespace' => 'App\Http\Controllers\Guest', 'prefix' => 'guest'], function () {
+   Route::group(['namespace' => 'Search', 'prefix' => 'search'], function () {
+       Route::get('/search', 'SearchController')->name('search');
+   });
+});
+
 Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('personal');
@@ -83,4 +91,3 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');

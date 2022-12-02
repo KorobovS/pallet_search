@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -22,16 +20,4 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
-    }
-
-    public function search(Request $request)
-    {
-        $s = $request->search;
-        $articles = Article::query()->where('article', 'LIKE', "%$s%")->get();
-
-        return view('search', compact('articles'));
-    }
 }
