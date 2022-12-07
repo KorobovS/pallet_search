@@ -13,6 +13,6 @@ class SearchController extends Controller
         $s = $request->search;
         $articles = Article::query()->where('article', 'LIKE', "%$s%")->get();
 
-        return view('search', compact('articles'));
+        return view('guest.search.search', compact('articles'));
     }
 }

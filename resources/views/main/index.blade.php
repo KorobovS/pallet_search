@@ -12,7 +12,7 @@
                 </form>
             </div>
             <div class="rol mb-3">
-                <a href="#" class="btn btn-primary">Добавить</a>
+                <a href="{{ route('guest.article.create') }}" class="btn btn-primary">Добавить</a>
             </div>
         </div>
 
@@ -28,16 +28,12 @@
                                     <a>{{ $item->place }}</a>
                                 @endforeach
                             </ul>
-                            <a href="#" class="btn btn-primary">Редактировать</a>
+                            <a href="{{ route('guest.article.edit', $article->id ) }}" class="btn btn-primary">Редактировать</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
-
-    <footer class="py-3 my-4">
-        <p class="text-center text-muted">© 2022 Pallet Search, Inc</p>
-    </footer>
 
 @endsection

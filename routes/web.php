@@ -20,9 +20,18 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
 //Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
 
 Route::group(['namespace' => 'App\Http\Controllers\Guest', 'prefix' => 'guest'], function () {
-   Route::group(['namespace' => 'Search', 'prefix' => 'search'], function () {
-       Route::get('/search', 'SearchController')->name('search');
-   });
+    Route::group(['namespace' => 'Search', 'prefix' => 'search'], function () {
+        Route::get('/search', 'SearchController')->name('search');
+    });
+    Route::group(['namespace' => 'Article', 'prefix' => 'articles'], function () {
+        Route::get('/', 'IndexController')->name('guest.article.index');
+        Route::get('/create', 'CreateController')->name('guest.article.create');
+        Route::post('/', 'StoreController')->name('guest.article.store');
+        Route::get('/{article}', 'ShowController')->name('guest.article.show');
+        Route::get('/{article}/edit', 'EditController')->name('guest.article.edit');
+        Route::patch('/{article}', 'UpdateController')->name('guest.article.update');
+        Route::delete('/{article}', 'DeleteController')->name('guest.article.delete');
+    });
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
@@ -90,4 +99,3 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
